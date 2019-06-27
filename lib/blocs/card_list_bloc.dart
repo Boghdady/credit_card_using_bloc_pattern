@@ -33,6 +33,11 @@ class CardListBloc {
   void dispose() {
     _cardsController.close();
   }
+
+  void addCardToList(CardModel newCard) {
+    _cardResults.add(newCard);
+    _cardsController.sink.add(_cardResults);
+  }
 }
 
 final cardListBloc = CardListBloc();
